@@ -7,9 +7,9 @@ import SearchModal from './SearchModal';
 	const [showSearch, setShowSearch] = useState(false);
 	return (
 		<>
-			<nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+			<nav className="navbar navbar-expand-lg navbar-dark bg-black border-bottom sticky-top">
 				<div className="container">
-					<Link className="navbar-brand fw-bold" to="/">Apple Clone</Link>
+					<Link className="navbar-brand fw-bold text-white" to="/">Apple Clone</Link>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
 						<span className="navbar-toggler-icon" />
 					</button>
@@ -31,10 +31,10 @@ import SearchModal from './SearchModal';
 						</ul>
 
 
-						<ul className="navbar-nav ms-auto">
-							  <li className="nav-item"><button className="nav-link btn btn-link" onClick={() => setShowSearch(true)}>Search</button></li>
-							  <li className="nav-item"><button className="nav-link btn btn-link">Bag</button></li>
-						</ul>
+				<ul className="navbar-nav ms-auto">
+					<li className="nav-item"><button className="nav-link btn btn-link text-white" onClick={() => setShowSearch(true)}>Search</button></li>
+					<li className="nav-item"><button className="nav-link btn btn-link text-white">Bag</button></li>
+				</ul>
 					</div>
 				</div>
 			</nav>

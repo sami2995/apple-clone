@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import PromoBanner from '../components/PromoBanner';
 import ProductGrid from '../components/ProductGrid';
 
 const products = [
@@ -13,8 +12,6 @@ const products = [
 function Home() {
   return (
     <div>
-      <PromoBanner text="Free delivery & returns on everything" small={true} />
-
       {/* ✅ Use public path directly */}
       <Hero
         title="iPhone 17 Pro"

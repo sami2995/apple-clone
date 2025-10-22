@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Hero({ title, subtitle, ctaText, image, reverse, full }) {
+function Hero({ title, subtitle, ctaText, image, reverse, full, showLearn = true }) {
 	// full: when true, render an edge-to-edge (full-bleed) hero where the image
 	// spans the viewport while the text stays constrained.
 	if (full) {
@@ -11,13 +11,13 @@ function Hero({ title, subtitle, ctaText, image, reverse, full }) {
 					<h1 className="display-4 fw-bold text-white">{title}</h1>
 					{subtitle && <p className="lead text-white">{subtitle}</p>}
 					<div className="mt-4">
-						<button className="btn btn-primary btn-lg me-3">Learn more</button>
+						{showLearn && <button className="btn btn-primary btn-lg me-3">Learn more</button>}
 						<button className="btn btn-outline-primary btn-lg">{ctaText || 'Buy'}</button>
 					</div>
 				</div>
-				{/* full-width image that crops horizontally like Apple's hero */}
+				{/* full-width image: use contain so the device isn't zoomed; keep height controlled */}
 				<div style={{width: '100%', overflow: 'hidden'}}>
-					<img src={image} alt="hero" style={{width: '100%', height: '55vh', objectFit: 'cover', objectPosition: 'center bottom'}} />
+					<img src={image} alt="hero" style={{width: '100%', height: '55vh', objectFit: 'contain', objectPosition: 'center'}} />
 				</div>
 			</section>
 		);
