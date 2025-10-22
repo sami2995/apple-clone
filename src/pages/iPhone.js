@@ -10,17 +10,17 @@ const phones = [
 
 
  function iPhone(){
-return (
-<div>
-<Hero title="iPhone" subtitle="Say hello to iPhone" image={'/assets/iphone-hero.jpg'} />
-<section className="py-5">
-<div className="container">
-<h3 className="mb-4">iPhone models</h3>
-</div>
-<ProductGrid products={phones} />
-</section>
-</div>
-);
+    return (
+    <div>
+    <Hero title="iPhone" subtitle="Say hello to iPhone" image={'/assets/iphone-hero.jpg'} />
+    <section className="py-5">
+    <div className="container">
+    <h3 className="mb-4">iPhone models</h3>
+    </div>
+    <ProductGrid products={phones} />
+    </section>
+    </div>
+    );
 }
 
 export default iPhone
