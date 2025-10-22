@@ -21,6 +21,41 @@ function Home() {
         full
       />
 
+      {/* Side-by-side feature panels: AirPods (left) and Vision Pro (right with overlayed text) */}
+      <section className="container my-4">
+        <div className="row g-0 align-items-stretch">
+          <div className="col-md-6 p-4 d-flex flex-column justify-content-start" style={{minHeight: 360, background: 'linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02))'}}>
+            <div className="text-center" style={{color: '#000'}}>
+              <h3 className="display-6 fw-bold">AirPods Pro 3</h3>
+              <p className="lead">The world’s best in‑ear Active Noise Cancellation.</p>
+              <div className="mt-3">
+                <button className="btn btn-primary me-2">Learn more</button>
+                <button className="btn btn-outline-primary">Buy</button>
+              </div>
+            </div>
+
+            <div className="mt-auto" style={{height: '100%'}}>
+              <img src={'/assets/airpod.png'} alt="AirPods silhouettes" className="w-100 h-100" style={{objectFit: 'cover', objectPosition: 'center'}} />
+            </div>
+          </div>
+
+          <div className="col-md-6 p-4 d-flex flex-column justify-content-start" style={{minHeight: 360, background: 'linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02))'}}>
+            <div className="text-center" style={{color: '#000'}}>
+              <h3 className="display-6 fw-bold">Vision Pro</h3>
+              <p className="lead">New powerful M5 chip and comfortable band.</p>
+              <div className="mt-3">
+                <button className="btn btn-primary me-2">Learn more</button>
+                <button className="btn btn-outline-primary">Pre-order</button>
+              </div>
+            </div>
+
+            <div className="mt-auto" style={{height: '100%'}}>
+              <img src={'/assets/vision-pro.jpg'} alt="Vision Pro" className="w-100 h-100" style={{objectFit: 'cover', objectPosition: 'center'}} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-5">
         <div className="container">
           <h3 className="mb-4">Featured products</h3>
