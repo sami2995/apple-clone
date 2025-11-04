@@ -25,14 +25,7 @@ const phones = [
             reverse={false}
         />
 
-        <FeaturePair
-            title="Vision Pro"
-            subtitle="New powerful M5 chip and comfortable band."
-            ctaPrimary="Learn more"
-            ctaSecondary="Pre-order"
-            image={'/assets/vision-pro.jpg'}
-            reverse={true}
-        />
+       
 
         <section className="py-5">
             <div className="container">

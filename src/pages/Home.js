@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import ProductGrid from '../components/ProductGrid';
+import FeatureStrip from '../components/FeatureStrip';
 
 const products = [
   { id: 1, title: 'iPhone 14', subtitle: 'Pro. Beyond', price: '$799', image: '/assets/iphone14.jpg' },
@@ -55,6 +56,24 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Additional feature strip below the AirPods / Vision Pro section */}
+      <FeatureStrip
+        left={{
+          title: 'Watch Series 11',
+          subtitle: 'The unltimate way to watch your health.',
+          ctaPrimary: 'Learn more',
+          ctaSecondary: 'Buy',
+          image: '/assets/watch.jpg'
+        }}
+        right={{
+          title: 'iPad Pro',
+          subtitle: 'Advanced AI performance and game changing capabilities.',
+          ctaPrimary: 'Learn more',
+          ctaSecondary: 'Buy',
+          image: '/assets/ipad-pro.jpg'
+        }}
+      />
 
       <section className="py-5">
         <div className="container">
