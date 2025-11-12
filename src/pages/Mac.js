@@ -12,7 +12,7 @@ const macs = [
 function Mac(){
 return (
 <div>
-<Hero title="Mac" subtitle="Power for pros" image="/assets/mac-hero.jpg" reverse />
+<Hero title="Mac" subtitle="Power for pros" image="/assets/mac.png" reverse />
 <section className="py-5">
 <div className="container">
 <h3 className="mb-4">Mac lineup</h3>

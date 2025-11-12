@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ProductGrid from '../components/ProductGrid';
 import FeatureStrip from '../components/FeatureStrip';
@@ -10,71 +11,107 @@ const products = [
   { id: 4, title: 'Apple Watch', subtitle: 'Fitness +', price: '$399', image: '/assets/watch.jpg' },
 ];
 
-function Home() {
+export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div>
-      {/* ✅ Use public path directly */}
       <Hero
         title="iPhone 17 Pro"
         subtitle="All out Pro."
         ctaText="Buy"
         image="/assets/iphone17pro.png"
         full
+        onLearnMore={() => navigate('/iphone')}
+        onCtaClick={() => navigate('/store')}
       />
 
-      {/* Side-by-side feature panels: AirPods (left) and Vision Pro (right with overlayed text) */}
+      {/* Feature panels: AirPods & Vision Pro */}
       <section className="container my-4">
         <div className="row g-0 align-items-stretch">
-          <div className="col-md-6 p-4 d-flex flex-column justify-content-start" style={{minHeight: 360, background: 'linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02))'}}>
-            <div className="text-center" style={{color: '#000'}}>
+          {/* AirPods Panel */}
+          <div
+            className="col-md-6 p-4 d-flex flex-column justify-content-start"
+            style={{
+              minHeight: 360,
+              background: 'linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02))',
+            }}
+          >
+            <div className="text-center" style={{ color: '#000' }}>
               <h3 className="display-6 fw-bold">AirPods Pro 3</h3>
-              <p className="lead">The world’s best in‑ear Active Noise Cancellation.</p>
+              <p className="lead">The world’s best in-ear Active Noise Cancellation.</p>
               <div className="mt-3">
-                <button className="btn btn-primary me-2">Learn more</button>
-                <button className="btn btn-outline-primary">Buy</button>
+                <Link to="/airpods" className="btn btn-primary me-2">
+                  Learn more
+                </Link>
+                <Link to="/airpods" className="btn btn-outline-primary">
+                  Buy
+                </Link>
               </div>
             </div>
-
-            <div className="mt-auto" style={{height: '100%'}}>
-              <img src={'/assets/airpod.png'} alt="AirPods silhouettes" className="w-100 h-100" style={{objectFit: 'cover', objectPosition: 'center'}} />
+            <div className="mt-auto" style={{ height: '100%' }}>
+              <img
+                src="/assets/airpod.png"
+                alt="AirPods Pro 3"
+                className="w-100 h-100"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                loading="lazy"
+              />
             </div>
           </div>
 
-          <div className="col-md-6 p-4 d-flex flex-column justify-content-start" style={{minHeight: 360, background: 'linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02))'}}>
-            <div className="text-center" style={{color: '#000'}}>
+          {/* Vision Pro Panel */}
+          <div
+            className="col-md-6 p-4 d-flex flex-column justify-content-start"
+            style={{
+              minHeight: 360,
+              background: 'linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02))',
+            }}
+          >
+            <div className="text-center" style={{ color: '#000' }}>
               <h3 className="display-6 fw-bold">Vision Pro</h3>
               <p className="lead">New powerful M5 chip and comfortable band.</p>
               <div className="mt-3">
-                <button className="btn btn-primary me-2">Learn more</button>
-                <button className="btn btn-outline-primary">Pre-order</button>
+                <Link to="/vision" className="btn btn-primary me-2">
+                  Learn more
+                </Link>
+                <Link to="/vision" className="btn btn-outline-primary">
+                  Pre-order
+                </Link>
               </div>
             </div>
-
-            <div className="mt-auto" style={{height: '100%'}}>
-              <img src={'/assets/vision-pro.jpg'} alt="Vision Pro" className="w-100 h-100" style={{objectFit: 'cover', objectPosition: 'center'}} />
+            <div className="mt-auto" style={{ height: '100%' }}>
+              <img
+                src="/assets/vision-pro.jpg"
+                alt="Vision Pro headset"
+                className="w-100 h-100"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Additional feature strip below the AirPods / Vision Pro section */}
+      {/* Feature strip: MacBook & iPad */}
       <FeatureStrip
         left={{
-          title: 'Watch Series 11',
-          subtitle: 'The unltimate way to watch your health.',
-          ctaPrimary: 'Learn more',
-          ctaSecondary: 'Buy',
-          image: '/assets/watch.jpg'
+          title: 'MacBook 14"',
+          subtitle: 'Supercharged by M5',
+          ctaPrimary: <Link to="/mac">Learn more</Link>,
+          ctaSecondary: <Link to="/mac">Buy</Link>,
+          image: '/assets/mac.png',
         }}
         right={{
           title: 'iPad Pro',
-          subtitle: 'Advanced AI performance and game changing capabilities.',
-          ctaPrimary: 'Learn more',
-          ctaSecondary: 'Buy',
-          image: '/assets/ipad-pro.jpg'
+          subtitle: 'Advanced AI performance and game-changing capabilities.',
+          ctaPrimary: <Link to="/iPad">Learn more</Link>,
+          ctaSecondary: <Link to="/iPad">Buy</Link>,
+          image: '/assets/ipad.png',
         }}
       />
 
+      {/* Featured products */}
       <section className="py-5">
         <div className="container">
           <h3 className="mb-4">Featured products</h3>
@@ -82,6 +119,7 @@ function Home() {
         <ProductGrid products={products} />
       </section>
 
+      {/* AppleCare section */}
       <section className="py-5 bg-light">
         <div className="container text-center">
           <h4>Get AppleCare+</h4>
@@ -91,5 +129,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;

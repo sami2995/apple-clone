@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 function AirPods(){
   return (
     <div>
-      <Hero title="AirPods" subtitle="Wireless audio" image={'/assets/airpods-hero.jpg'} />
+      <Hero title="AirPods" subtitle="Wireless audio" image={'/assets/airpod.png'} />
       <section className="container py-5"><p>AirPods page content...</p></section>
     </div>
   )

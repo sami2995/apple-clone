@@ -10,7 +10,7 @@ const ipads = [
 function IPad() {
   return (
     <div>
-      <Hero title="iPad" subtitle="Powerful. Magical." image={'/assets/ipad-hero.jpg'} />
+      <Hero title="iPad" subtitle="Powerful. Magical." image={'/assets/ipad.png'} />
       <section className="py-5">
         <div className="container">
           <h3 className="mb-4">iPad models</h3>
